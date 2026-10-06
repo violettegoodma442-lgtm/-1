@@ -92,6 +92,11 @@ export const HelpRulesModal: React.FC<HelpRulesModalProps> = ({ isOpen, onClose 
             </div>
           </div>
 
+          <div className="p-3 rounded-lg bg-emerald-950/40 border border-emerald-500/40 text-xs">
+            <span className="font-bold text-emerald-300 block mb-1">📱 安卓手机安装与 Vercel 部署指引：</span>
+            本项目完美支持 PWA 标准与 Vercel 极速部署。手机浏览器打开网址后点击导航栏的「安装安卓App」或浏览器菜单中的「添加到主屏幕」，即可生成独立全屏 App 图标，具备离线可用与触感震动反馈！在 Vercel 平台导入即可一键完成全自动化部署。
+          </div>
+
           <div className="p-3 rounded-lg bg-slate-800/80 border border-slate-700 text-xs">
             <span className="font-bold text-white block mb-1">💡 自定义小提示：</span>
             你可以在「海克斯卡库」随时添加朋友们喜欢的专属恶搞或平衡卡片，也可以暂时禁用某些过于强力的卡片，支持一键导出备份或分享！

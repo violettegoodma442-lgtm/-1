@@ -38,8 +38,20 @@ class SoundEffects {
     return this.muted;
   }
 
+  // Mobile Haptic Vibration Feedback for Android & supported devices
+  public vibrate(pattern: number | number[] = 15) {
+    if (typeof window !== 'undefined' && 'navigator' in window && window.navigator.vibrate) {
+      try {
+        window.navigator.vibrate(pattern);
+      } catch {
+        // Ignore if unsupported or blocked by permissions
+      }
+    }
+  }
+
   // Card draw / swoosh
   public playDraw() {
+    this.vibrate(15);
     if (this.muted) return;
     this.initCtx();
     if (!this.ctx) return;
@@ -65,6 +77,7 @@ class SoundEffects {
 
   // Golden / Prismatic Hextech Reveal chime
   public playReveal(rarity: 'silver' | 'gold' | 'prismatic' = 'gold') {
+    this.vibrate(rarity === 'prismatic' ? [25, 40, 60] : [20, 30]);
     if (this.muted) return;
     this.initCtx();
     if (!this.ctx) return;
@@ -97,6 +110,7 @@ class SoundEffects {
 
   // Button click / Select card
   public playClick() {
+    this.vibrate(12);
     if (this.muted) return;
     this.initCtx();
     if (!this.ctx) return;
@@ -121,6 +135,7 @@ class SoundEffects {
 
   // Coin Flip / Dice Roll
   public playDice() {
+    this.vibrate([15, 20, 25, 30]);
     if (this.muted) return;
     this.initCtx();
     if (!this.ctx) return;
@@ -147,6 +162,7 @@ class SoundEffects {
 
   // LP calculation beep
   public playLp(isIncrease: boolean) {
+    this.vibrate(isIncrease ? [15, 25] : [20]);
     if (this.muted) return;
     this.initCtx();
     if (!this.ctx) return;
@@ -174,6 +190,7 @@ class SoundEffects {
 
   // Duel Start Fanfare
   public playDuelStart() {
+    this.vibrate([40, 60, 80]);
     if (this.muted) return;
     this.initCtx();
     if (!this.ctx) return;

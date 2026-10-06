@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bg-grad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="60%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </radialGradient>
+
+    <!-- Gold Foil Gradient -->
+    <linearGradient id="gold-foil" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="35%" stop-color="#eab308"/>
+      <stop offset="70%" stop-color="#ca8a04"/>
+      <stop offset="100%" stop-color="#854d0e"/>
+    </linearGradient>
+
+    <!-- Cyan Hextech Glow Gradient -->
+    <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#67e8f9"/>
+      <stop offset="50%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+
+    <!-- Filter for glow -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="104" fill="url(#bg-grad)"/>
+
+  <!-- Hextech Outer Ring -->
+  <circle cx="256" cy="256" r="210" fill="none" stroke="url(#gold-foil)" stroke-width="6" opacity="0.4" stroke-dasharray="16 8"/>
+  <circle cx="256" cy="256" r="185" fill="none" stroke="url(#cyan-glow)" stroke-width="3" opacity="0.6"/>
+
+  <!-- Millennium Puzzle Triangle Base -->
+  <polygon points="256,70 420,380 92,380" fill="#0f172a" stroke="url(#gold-foil)" stroke-width="12" stroke-linejoin="round"/>
+  
+  <!-- Inner Triangle Accents -->
+  <polygon points="256,120 380,350 132,350" fill="none" stroke="url(#gold-foil)" stroke-width="4" opacity="0.5"/>
+
+  <!-- Millennium Eye (千年眼) Motif -->
+  <!-- Eye Outline Outer -->
+  <path d="M 176 270 Q 256 195 336 270 Q 256 345 176 270 Z" fill="#020617" stroke="url(#gold-foil)" stroke-width="8" stroke-linejoin="round"/>
+
+  <!-- Eye Pupil (Iris) -->
+  <circle cx="256" cy="270" r="32" fill="url(#cyan-glow)" filter="url(#glow)"/>
+  <circle cx="256" cy="270" r="16" fill="#020617"/>
+  <circle cx="262" cy="264" r="5" fill="#ffffff"/>
+
+  <!-- Millennium Eye Eyelash Rays -->
+  <path d="M 256 195 L 256 160" stroke="url(#gold-foil)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 220 205 L 195 180" stroke="url(#gold-foil)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 292 205 L 317 180" stroke="url(#gold-foil)" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- Lower Tear Spiral -->
+  <path d="M 256 345 Q 256 395 280 405" fill="none" stroke="url(#gold-foil)" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Hextech Magic Runes / Accent Nodes -->
+  <circle cx="256" cy="70" r="10" fill="url(#cyan-glow)"/>
+  <circle cx="420" cy="380" r="10" fill="url(#cyan-glow)"/>
+  <circle cx="92" cy="380" r="10" fill="url(#cyan-glow)"/>
+
+  <!-- Dual Swords Symbol (Small crossed swords at top) -->
+  <g transform="translate(256, 150) scale(0.6)" opacity="0.8">
+    <path d="M -20 -10 L 20 10 M -20 10 L 20 -10" stroke="#fef08a" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>
